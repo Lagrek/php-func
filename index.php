@@ -107,7 +107,62 @@ echo substr_replace($substrreplace, "LowerThanLow", 0);
 ?>
 <?php
 echo "<br/>";
+?>
 
+
+<?php  
+$locale = setlocale(LC_ALL,'ru_RU.CP1251');
+echo $locale;
+?>
+<?php
+$strfir = "Поделились на команды";
+$str = convert_cyr_string($strfir, w, m);
+echo $str;
+?>
+
+<?php
+echo "<br/>";
+$discussion = "game";
+printf ('Let`s start our %d', $discussion);
+?>
+
+<?php
+echo "<br/>";
+$str = "Вчера было %g января";
+echo sprintf($str, 17);
+?>
+<?php
+echo "<br/>";
+echo nl2br("Чемпион суперкубка Италии\n Ювентус");
+?>
+<?php
+echo "<br/>";
+$text = "London is a capital city of Great Britain";
+$phrase = wordwrap($text, 25, "<br />\n" );
+echo $phrase;
+?>
+<?php 
+echo "<br/>";
+$str = '<p>1917</p>';
+echo strip_tags($str);
+echo strip_tags($str,'<p>')
+ ?>
+ <?php
+$text = pack("acs*", 0x1234, 0x5678, 65, 66);
+?>
+<?php
+echo "<br/>";
+$unp = "\x04\x00\xa0\x00";
+$unpack = unpack("cchars/nint", $unp);
+print_r($inpack);
+?>
+<?php
+echo "<br/>";
+$text = 'кубок';
+md5($text);
+$textcrc = crc32 ($text);
+echo $textcrc;
+$cryptonit = crypt($text);
 ?>
 </body>
 </html>
